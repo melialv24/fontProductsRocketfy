@@ -1,0 +1,51 @@
+ <div class="BoxContainer">
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Ex. producto1" [(ngModel)]="product.name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Sku</mat-label>
+        <input matInput placeholder="Ex. REF32" [(ngModel)]="product.sku">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Descripción</mat-label>
+        <input matInput placeholder="Ex. producto1" [(ngModel)]="product.description">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Url imagen</mat-label>
+        <input matInput placeholder="Ex. https://" [(ngModel)]="product.urlImage">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Categorías</mat-label>
+        <mat-select [formControl]="categoriesSelected" multiple>
+          <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div>
+        <mat-form-field>
+          <mat-label>Añadir categoría</mat-label>
+          <input matInput placeholder="Ex. Muebles" [(ngModel)]="newCategory">
+        </mat-form-field>
+        <button mat-mini-fab color="primary" (click)="addCategory()" aria-label="Añadir categoría">
+            <mat-icon>plus_one</mat-icon>
+        </button>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <input type="number" matInput placeholder="Ex. 1234" [(ngModel)]="product.price">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Stock</mat-label>
+        <input type="number" matInput placeholder="Ex. 1234" [(ngModel)]="product.stock">
+      </mat-form-field>
+
+      <button (click)="save()"  mat-raised-button class="BtnStyle" style="margin-bottom: 10px;">Guardar</button>
+      <button (click)="onNoClick()" mat-raised-button class="BtnStyle">Cancelar</button>
+  </div>

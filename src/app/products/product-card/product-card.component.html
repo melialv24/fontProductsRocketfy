@@ -1,0 +1,48 @@
+<mat-card [ngClass]="{ 'detail-card': stateDetail, 'custom-card': !stateDetail }" >
+  <img [ngClass]="{ 'detail-image': stateDetail, 'custom-image': !stateDetail }"  mat-card-image [src]="product.urlImage" alt="Image" />
+  <mat-card-content class="custom-card-content">
+    <div class="custom-card-text">
+      <strong>NOMBRE:</strong>
+      <div class="box-span">
+        <span class="text-normal">{{ product.name | uppercase }}</span>
+      </div>
+    </div>
+    <div class="custom-card-text">
+      <strong>SKU:</strong>
+      <div class="box-span">
+        <span class="text-normal">{{ product.sku }}</span>
+      </div>
+    </div>
+    <div class="custom-card-text">
+      <strong>PRECIO:</strong>
+      <div class="box-span">
+        <span class="text-normal"> {{ product.price | currency  }}</span>
+      </div>
+    </div>
+    <div  *ngIf="product.stock" class="custom-card-text">
+        <strong>STOCK:</strong>
+        <div class="box-span">
+          <span class="text-normal"> {{ product.stock }}</span>
+        </div>
+    </div>
+    <div *ngIf="product.description" class="custom-card-text">
+      <strong>DESCRIPCIÓN:</strong>
+      <div class="box-span">
+        <span class="text-normal"> {{ product.description | uppercase  }}</span>
+      </div>
+    </div>
+    <div *ngIf="product.tags" class="custom-card-text">
+      <strong>TAGS:</strong>
+      <div class="box-span">
+        <span *ngFor="let tag of product.tags; let last = last" class="text-normal">
+          {{ tag | uppercase }}{{ !last ? ', ' : '' }}
+        </span>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="custom-actions">
+    <button *ngIf="!stateDetail" mat-raised-button class="BtnStyle"  (click)="redirectToDetail()">Detalle</button>
+    <button *ngIf="stateDetail" mat-raised-button class="BtnStyle" style="margin-right: 10px;" (click)="emitEventEditor()">Editar</button>
+    <button *ngIf="stateDetail" mat-raised-button class="BtnStyle" (click)="emitEventDelete()">Eliminar</button>
+  </mat-card-actions>
+</mat-card>

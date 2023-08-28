@@ -1,0 +1,9 @@
+.BoxPrincipal{
+  display: flex;
+  justify-content: center;
+}
+
+.BoxCard{
+  width: 100%;
+  display: contents;
+}

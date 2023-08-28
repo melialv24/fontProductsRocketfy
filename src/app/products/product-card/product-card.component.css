@@ -1,0 +1,51 @@
+.custom-card {
+  width: 300px; /* Ancho de la tarjeta */
+  height: auto;
+  margin: 20px; /* Márgenes para el espaciado */
+}
+
+.detail-card{
+  margin: 20px;
+  height: auto;
+  width: 50%;
+}
+
+.BtnStyle {
+  background-color: #5a1dfc;
+  color: white;
+}
+
+.detail-image{
+  height: 600px; /* Altura de la img */
+}
+
+
+.custom-image {
+  height: 300px; /* Altura de la img */
+}
+
+.box-span{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.custom-actions {
+  display: flex;
+  margin: 10px 10px 5px 0;
+  justify-content: flex-end; /* Alinea el contenido al final (derecha) */
+}
+
+.text-normal{
+  font-size: 15px;
+}
+
+.custom-card-text {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin: 10px 0px;
+}
+
+.custom-card-content {
+  display: flex;
+  flex-direction: column;
+}

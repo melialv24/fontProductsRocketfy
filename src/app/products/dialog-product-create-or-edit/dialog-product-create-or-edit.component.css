@@ -1,0 +1,12 @@
+.BoxContainer{
+  display: grid;
+  width: 500px;
+  height: 600px;
+  grid-template-rows: 16% 16% 16% 16% 16% 16%;
+  padding: 20px;
+}
+
+.BtnStyle {
+  background-color: #5a1dfc;
+  color: white;
+}
