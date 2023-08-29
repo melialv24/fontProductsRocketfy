@@ -1,5 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://backendproductsrocketfy.onrender.com/api',
-  port: 3000
+  apiUrl: 'http://localhost:5000/api',
 };
