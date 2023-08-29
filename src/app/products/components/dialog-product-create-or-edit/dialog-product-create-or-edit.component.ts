@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
 import { ProductsService } from 'src/app/services/products.service';
-import { ProductDetailCard, ReceiveDetailsData } from '../types';
+import { ProductDetailCard, ReceiveDetailsData } from '../../types';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

@@ -19,6 +19,16 @@ export interface EditProduct {
   stock?: number
 }
 
+export interface Filters {
+  filterState?: boolean
+  minPrice?: number,
+  maxPrice?: number,
+  name?: string,
+  sku?: string,
+  tags?: string[],
+}
+
+
 export interface CreateProduct {
   name: string,
   price: number,

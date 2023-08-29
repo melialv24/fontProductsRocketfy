@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductDetailCard } from '../types';
+import { ProductDetailCard } from '../../types';
 
 @Component({
   selector: 'app-product-card',

@@ -1,0 +1,25 @@
+<div>
+
+  <div class="BoxBtnCreate">
+    <button  mat-raised-button class="BtnCreate" (click)="createNewProduct()">Crear Producto</button>
+  </div>
+
+  <app-filters></app-filters>
+
+
+  <div class="BoxPrincipal">
+    <app-product-card *ngFor="let product of (products | slice : lowValue : highValue)" [product]="product">
+    </app-product-card>
+  </div>
+
+  <app-paginator
+    [length]="products.length"
+    [pageSize]="3"
+    [pageSizeOptions]="[3,15,20,30]"
+    [showPageSizeOptions]="true"
+    [lowValue]="lowValue"
+    [highValue]="highValue"
+    (changeSize)="resizePaginator($event)"
+  ></app-paginator>
+
+</div>

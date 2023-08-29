@@ -1,4 +1,8 @@
 <div class="BoxPrincipal">
+  <div style="display: block;">
+    <button mat-raised-button class="BtnStyle" (click)="redirectToProducts()">Volver al Listado de Productos</button>
+  </div>
+
   <app-product-card (openEditor)="handleOpenEditor()" (deleteProduct)="handleDeleteProduct()" class="BoxCard" [product]="product" [stateDetail]="true">
   </app-product-card>
 </div>

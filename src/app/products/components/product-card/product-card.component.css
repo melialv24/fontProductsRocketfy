@@ -11,8 +11,8 @@
 }
 
 .BtnStyle {
-  background-color: #5a1dfc;
-  color: white;
+  background-color: #5a1dfc !important;
+  color: white !important;
 }
 
 .detail-image{

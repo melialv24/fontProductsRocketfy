@@ -1,0 +1,7 @@
+<mat-paginator
+class="CustomPaginator"
+              [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+              (page)="getPaginatorData($event)">
+</mat-paginator>

@@ -6,10 +6,23 @@ export interface ProductCard {
   _id?: string
 }
 
+export interface Filters {
+  minPrice?: number,
+  maxPrice?: number,
+  name?: string,
+  sku?: string,
+  tags?: string[],
+}
+
 export interface ProductDetailCard extends ProductCard {
   description?: string
   tags?: string[]
   stock?: number
+}
+
+export interface SizePaginator{
+  lowValue: number
+  highValue: number
 }
 
 

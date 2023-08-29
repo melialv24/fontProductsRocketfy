@@ -1,10 +1,10 @@
 import { Component, RendererStyleFlags2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductsService } from 'src/app/services/products.service';
-import { ProductDetailCard } from '../types';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogProductCreateOrEditComponent } from '../dialog-product-create-or-edit/dialog-product-create-or-edit.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ProductDetailCard } from '../../types';
+import { ProductsService } from '../../../services/products.service';
+import { DialogProductCreateOrEditComponent } from '../../components/dialog-product-create-or-edit/dialog-product-create-or-edit.component';
 
 @Component({
   selector: 'app-product-detail',
@@ -38,6 +38,10 @@ export class ProductDetailComponent {
         console.log(err);
       }
     })
+  }
+
+  redirectToProducts(){
+    this.router.navigate(['/products']);
   }
 
   handleOpenEditor() {
