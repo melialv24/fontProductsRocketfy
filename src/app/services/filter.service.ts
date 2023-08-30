@@ -20,7 +20,6 @@ export class FilterService {
   constructor() { }
 
   updateFilters(filters: Filters) {
-    console.log({filters})
     this.filtersSubject.next(filters);
   }
 

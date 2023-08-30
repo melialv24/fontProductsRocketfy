@@ -57,7 +57,6 @@ export class ProductsListComponent {
 
 
   getProducts(){
-    console.log({ ...this.filters })
     this.productService.getProducts({...this.filters}).subscribe({
       next: (response: any) => {
         this.products = response.data
