@@ -7,6 +7,7 @@ export interface ProductCard {
 }
 
 export interface Filters {
+  filterState: boolean
   minPrice?: number,
   maxPrice?: number,
   name?: string,

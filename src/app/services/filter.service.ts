@@ -20,6 +20,7 @@ export class FilterService {
   constructor() { }
 
   updateFilters(filters: Filters) {
+    console.log({filters})
     this.filtersSubject.next(filters);
   }
 
@@ -32,6 +33,6 @@ export class FilterService {
       sku: '',
       tags: [] as string[],
     };
-    this.filtersSubject.next(defaultFilters);
+    this.updateFilters(defaultFilters);
   }
 }

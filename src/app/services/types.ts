@@ -20,7 +20,7 @@ export interface EditProduct {
 }
 
 export interface Filters {
-  filterState?: boolean
+  filterState: boolean
   minPrice?: number,
   maxPrice?: number,
   name?: string,

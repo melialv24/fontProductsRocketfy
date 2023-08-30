@@ -16,7 +16,14 @@ export class ProductsListComponent {
   products: ProductCard[] = [];
   lowValue: number = 0
   highValue: number = 3
-  filters: Filters = {}
+  filters: Filters = {
+    filterState: false,
+    minPrice: 0,
+    maxPrice: 0,
+    name: '',
+    sku: '',
+    tags: [] as string[]
+  }
 
   constructor(
     public dialog: MatDialog,
@@ -30,19 +37,27 @@ export class ProductsListComponent {
   ngOnInit(): void {
     this.getProducts();
     this.filterService.filters$.subscribe((filters) => {
+
       if (filters && filters.filterState) {
+        this.filters = filters
         this.applyFilters(filters);
+      }else{
+        this.filters = filters
+        this.getProducts()
       }
     });
   }
 
-  applyFilters(filters: any) {
-    this.filters = filters
-    this.getProducts()
+  applyFilters(filters: Filters) {
+    this.filters = filters;
+    this.filters.filterState = false; // Restablecer filterState a false
+    this.getProducts();
   }
 
 
+
   getProducts(){
+    console.log({ ...this.filters })
     this.productService.getProducts({...this.filters}).subscribe({
       next: (response: any) => {
         this.products = response.data

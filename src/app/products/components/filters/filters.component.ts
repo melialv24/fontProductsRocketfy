@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { FormControl } from '@angular/forms';
 import { FilterService } from 'src/app/services/filter.service';
+import { Filters } from '../../types';
 
 @Component({
   selector: 'app-filters',
@@ -12,7 +13,7 @@ export class FiltersComponent {
 
   categories: string[] = []
   categoriesSelected = new FormControl('');
-  filters = {
+  filters: Filters = {
     filterState: false,
     minPrice: 0,
     maxPrice: 0,
@@ -25,6 +26,9 @@ export class FiltersComponent {
 
   ngOnInit(){
     this.getCategories()
+    this.filterService.filters$.subscribe((filters) => {
+    this.filters = filters
+    });
   }
 
   getCategories() {
